@@ -1,0 +1,1183 @@
+saved_file,comment_text,starting_line_number,is_multiLine
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java,"
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the ""License""); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an ""AS IS"" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ",1,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java,"*                                                       
+ * <p>A simple example of setting up and using the Validator.</p> 
+ *
+ * This simple example shows all the steps needed to set up and use
+ * the Validator.  Note that in most cases, some kind of framework
+ * would be wrapped around the Validator, such as is the case with
+ * the Struts Validator Framework.  However, should you wish to use
+ * the Validator against raw Beans in a pure Java application, you
+ * can see everything you need to know to get it working here.
+ *
+ * @version $Revision$
+ ",36,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java,"*
+     * We need a resource bundle to get our field names and errors messages 
+     * from.  Note that this is not strictly required to make the Validator 
+     * work, but is a good coding practice.
+     ",50,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java,"*
+     * This is the main method that will be called to initialize the Validator, create some sample beans, and
+     * run the Validator against them.
+     ",59,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java," Create a new instance of a ValidatorResource, then get a stream",71,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java," handle on the XML file with the actions in it, and initialize the",72,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, resources from it.  This would normally be done by a servlet,73,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, run during JSP initialization or some other application-startup,74,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, routine.,75,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Make sure we close the input stream.,80,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Create a test bean to validate against.,86,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Create a validator with the ValidateBean actions for the bean,89,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, we're interested in.,90,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Tell the validator which bean to validate against.,93,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Run the validation actions against the bean.  Since all of the properties,98,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java," are null, we expect them all to error out except for street2, which has",99,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, no validations (it's an optional property),100,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java," Now set all the required properties, but make the age a non-integer.",105,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java," You'll notice that age will pass the required test, but fail the int",106,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, test.,107,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Now only report failed fields,118,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Now everything should pass.,123,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java,"*
+     * Dumps out the Bean in question and the results of validating it.
+     ",130,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Start by getting the form for the current locale and Bean.,140,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Iterate over each of the properties of the Bean which had messages.,146,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Get the Field associated with that property in the Form,151,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Look up the formatted name of the field from the Field arg0,154,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Get the result of validating the property.,157,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java," Get all the actions run against the property, and iterate over their names.",160,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java, Get the Action for that name.,165,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java," If the result is valid, print PASSED, otherwise print FAILED",168,True
+https://raw.githubusercontent.com/apache/commons-validator/master/src/example/org/apache/commons/validator/example/ValidateExample.java,"If the result failed, format the Action's message against the formatted field name",177,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java," search for quotations ""xx""",66,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, search for xx.xx(,73,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java," search for quotations ""xx""",87,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, search for xx.xx(,95,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, search for field names xx.xx,103,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, search for CamelCase,112,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, search for camelCase,120,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, search for CAMELCASE,128,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, search all clones's comments for code artifacts,143,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, scan all comments,148,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, make sure all artifacts are in the code,156,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, first check against the clones,161,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, then check the master,171,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, capture the artifacts into the commentMap,194,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, add this comment to the comment map,200,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, get a list of global terms from all clones (master and clones),219,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, master,221,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java,StanfordLemmatizer lemmatizer = new StanfordLemmatizer();,223,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, variable to capture the list of unique simple names,228,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, full range analysis,229,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, gather terms from the master,231,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java,str = lemmatizer.lemmatize(str);,238,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, check if the comment from each clone list is valid,249,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, first get name list for this clone's code,254,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, variable to capture the list of unique simple names,258,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, full range analysis,259,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, gather terms from the master,260,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, second get name list for each comment,275,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, get a list of terms from sentence,279,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java," find list of terms between this clone and comment,",300,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, which will have to exist in master or else discard,301,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, loop over each comment,303,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, loop over each term in comment,306,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, loop on clone terms,308,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, check if it exist in every master,322,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, Compile the pattern,406,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java," scope level should not go backwards,",421,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, only equal or larger,422,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Analyze.java, return true if satisfied,476,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ ",1,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,package Apriori;,6,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,,7,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"  Author: Su Yibin, under the supervision of Howard Hamilton and",8,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,          Mengchi Liu,9,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"  Copyright: University of Regina and Su Yibin, April 2000",10,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  No reproduction in whole or part without maintaining this copyright,11,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  notice and imposing this condition on any subsequent users.,12,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,,13,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,---- apriori.java,15,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,---- input file need:,17,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,----   1. config.txt,18,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"----      four lines, each line a integer",19,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"----      item number, transaction number , minsup",20,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,----   2. transa.txt,21,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,26,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Class Name : apriori,27,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : main program class,28,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,29,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"
+class Apriori
+{
+    public static void main(String[] args) throws IOException
+    {
+        AprioriProcess process1=new AprioriProcess();
+        System.exit(0);
+    }
+}",30,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,40,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Class Name : aprioriProcess,41,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : main processing class,42,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,43,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, state of tree node (hash table or,46,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, itemset list),47,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, total number of items per transaction,48,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, total number of transactions,49,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, minimum support to make frequent,52,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, default configuration file,54,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, default transaction file,55,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,59,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Class Name : candidateelement,60,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : object that will be stored in Vector candidate,61,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : include 2 item,62,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : a hash tree and a candidate list,63,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,64,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,71,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Class Name : hashtreenode,72,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : node of hash tree,73,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,74,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  IL or HT,77,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java," the current itemset depth (ie: 1-itemset, 2-itemsets, etc)",78,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,99,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Class Name : itemsetnode,100,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : node of itemset,101,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,102,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,132,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: printhashtree,133,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : print the whole hash tree,134,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"  Parameter  : htn is a hashtreenode (when other method call this method,it is the root)",135,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : transa : special transaction with all items occurr in it.,136,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : a : recursive depth,137,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     :,138,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,139,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, HT,149,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,162,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: getconfig,163,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : open file config.txt,164,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : get the total number of items of transaction file,165,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : and the total number of transactions,166,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : and minsup,167,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,168,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, ask if the user wants a non default config or transaction files,179,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java," if they want to change config or transaction files, get their input",191,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,open the config file and load the values,216,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,number of transactions,222,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,number of items,226,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,minsup,230,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,output config info to the user,234,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,245,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: getitemat,246,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : get an item from an itemset,247,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : get the total number of items of transaction file,248,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Parameter  : int i : i-th item ; itemset : string itemset,249,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     : String : the item at i-th in the itemset,250,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,251,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,copy the itemset into a new string,254,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,create a tokenizer,255,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"if trying to get an position outside of the set, notify user of error",258,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,loop through until get the token in the ith position,262,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,return the integer value of the ith position,266,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,270,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: itesetsize,271,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : get item number of an itemset,272,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Parameter  : itemset : string itemset,273,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     : int : the number of item of the itemset,274,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,275,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,tokenize the itemset,278,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,number of tokens is the size of the set,279,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,282,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: gensubset,283,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : generate all subset given an itemset,284,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Parameter  : itemset,285,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"  Return     : a string contains all subset deliminated by "",""",286,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"             : e.g. ""1 2,1 3,2 3"" is subset of ""1 2 3""",287,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,288,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,tokenize the itemset,301,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,add each token to str1 and put the spaces in,303,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,,309,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  System.out.println(str3);,322,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,end public String gensubset(String itemset),325,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,327,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: createcandidate,328,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : generate candidate n-itemset,329,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Parameter  : int n : n-itemset,330,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     : Vector : candidate is stored in a Vector,331,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,332,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"    System.out.println(""Generating ""+n+""-candidate item set ...."");",342,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"if its the 1-itemset, just add all the items to the list",343,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,if its 2 or more itemset,347,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,for each item in the set,352,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,check from the next one until the end and make new item sets,356,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"if depth = 2, then no formula to determine which ones can combine",361,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,first n-2 items in the itemset must be same for itemsets to be combined,367,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"if the first n-2 items are the same, combine the sets",388,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,end if n==2 else,398,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,end for j,399,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,end for i,400,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,end if n==1 else,401,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"for each candidate, if already has the itemset (tokenizer splits at "","") then don't add it",407,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,end public createcandidate(int n),426,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,428,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: createcandidatehashtre,429,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : generate candidate hash tree,430,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Parameter  : int n : n-itemset,431,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     : hashtreenode : root of the hashtree,432,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,433,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"    System.out.println(""Generating candidate ""+n+""-itemset hashtree ...."");",439,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,end public createcandidatehashtree(int n),455,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,458,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: genhash,459,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : called by createcandidatehashtree,460,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : recursively generate hash tree node,461,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"  Parameter  : htnf is a hashtreenode (when other method call this method,it is the root)",462,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : cand : candidate itemset string,463,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"             : int i : recursive depth,from i-th item, recursive",464,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     :,465,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,466,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,Vector isl=new Vector();,490,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,htn.itemsetlist=isl;,491,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,Hashtable ht=new Hashtable();,496,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,htn.ht=ht;,497,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"end public void genhash(int i, hashtreenode htnf, String cand)",502,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,504,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: createlargeitemset,505,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : find all itemset which have their counters>=minsup,506,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Parameter  : int n : n-itemset,507,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     :,508,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,509,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,large item set,513,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"    System.out.println(""Generating ""+n+""-large item set ...."");",517,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, end public void createlargeitemset(int n),525,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,528,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: getlargehash,529,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : recursively traverse candidate hash tree,530,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : to find all large itemset,531,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"  Parameter  : htnf is a hashtreenode (when other method call this method,it is the root)",532,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : cand : candidate itemset string,533,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : int i : recursive depth,534,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : Vector lis : Vector that stores large itemsets,535,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     :,536,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,537,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,560,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: transatraverse,561,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"  Purpose    : read each transaction, traverse hashtree,",562,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,               incrment approporiate itemset counter.,563,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Parameter  : int n : n-itemset,564,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     :,565,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,566,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"    System.out.println(""Traverse ""+n+""-candidate hashtree ... "");",579,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java, read the item names,587,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"if there are no more transactions, break the loop",597,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,check each item in the transaction and add to transaction string,604,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,add to string indicating what items are present in this transaction,610,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,638,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: transatrahash,639,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : called by transatraverse,640,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : recursively traverse hash tree,641,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"  Parameter  : htnf is a hashtreenode (when other method call this method,it is the root)",642,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,             : cand : candidate itemset string,643,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"             : int i : recursive depth,from i-th item, recursive",644,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     :,645,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,646,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"
+                   System.out.println(""transa: "" + transa + ""  d: "" + d);
+                   lastpos=transa.indexOf(Integer.toString(d));
+                   System.out.println(""Lastpos: "" + lastpos);
+                   if (lastpos!=-1)
+                   {
+                   System.out.println(""here"");
+                   ((itemsetnode)(itemsetlist.elementAt(j))).counter++;
+                   }
+                   ",670,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,HT,683,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java," public transatrahash(int ii,hashtreenode htnf,String transa)",688,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,690,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Method Name: aprioriProcess(),691,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Purpose    : main processing method,692,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Parameters :,693,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,  Return     :,694,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,-------------------------------------------------------------,695,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,start time,721,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"      System.out.println(""C""+k+""(""+k+""-candidate-itemset): ""+cande.candlist);",731,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,"      System.out.println(""Now reading transactions, increment counters of itemset"");",741,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,System.out.println((Vector)(largeitemset.elementAt(k-1)));,746,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Apriori.java,end time,761,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, cleans the directory without deleting it,47,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, generate a baseline config file,101,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, load config file,109,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, done parsing,141,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, clear existing output and save the config to output dir,144,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Get current time,147,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Measure elapsed time,152,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Cached list of files from the database,155,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Check if an existing cache file exists,159,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java," exist, load it",161,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java," doesn't exist or forced to create new path file, create it",165,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, td-idf,170,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java,"
+           TermFrequency termFreq = new TermFrequency();
+           if (buildTFIDF == true) {
+           termFreq.buildFrequencyMap(databaseDir);
+           } else {
+        //termFreq.loadFrequencyMap();
+        }",171,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Start loading main content,179,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, full mesh comparison,185,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, build the database,190,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Capture time,195,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, perform the comparison,199,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, full mesh requires both dir paths to be the same,200,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, enable the query engine,211,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java,"
+            // Frequency Map of all terms
+            FrequencyMap fMap = new FrequencyMap(aprioriMinSupport);
+            output.processOutputTerms(fMap);
+            fMap.exportTable(""table.txt"");
+            ",217,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Between comparison,224,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, between comparison,226,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, only load the projects into memory,242,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Capture time,247,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, perform the comparison,251,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Display all the errors,265,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Display and save elapsed time,268,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, save elapsed time,275,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CloneDigger.java, Display finish time,280,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentMap.java, comment type,18,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentMap.java," 0 - javadoc, 1 - linecomment, 2 - blockcomment",19,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java, Convert a file into a String ,25,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java, mode 0 - default where it grabs all comments,69,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java, mode 1 - stops upon finding a comment,70,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java," format 1 = autocomment, 0 = standard",71,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java, call accept on each comment to retrieve the content of the comment,106,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java,System.out.println(comment);,110,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java,System.out.println(startLineNumber);,113,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java,System.out.println(endLineNumber);,114,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java," search for line line comment, and javadoc comment within the range",115,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java, within the matched code,117,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java, search for line comment before the range,122,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java,if (endLineNumber == startLine - 1) {,125,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java, keep searching forward one line at a time,129,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java, start = end means it is a line,136,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java," uncatched by the previous two, block comment, must be at the end",157,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentParser.java, stop execution if in mode 1 once we found a comment,164,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentVisitor.java, http://stackoverflow.com/questions/12971991/eclipse-jdt-core-parser-not-parsing-the-comments,15,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentVisitor.java,"System.out.println(""dd "" + startLineNumber + "" "" + endLineNumber);",42,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentVisitor.java,"System.out.println(""ee "" + startLine + "" "" + endLine);",43,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentVisitor.java, Build the comment char by char,47,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentVisitor.java, Build the comment char by char,71,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentVisitor.java,"System.out.println(""dd ""  + startLineNumber + "" "" + endLineNumber);",93,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentVisitor.java,"System.out.println(""ee ""  + startLine + "" "" + endLine + ""\n"");",94,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/CommentVisitor.java, Build the comment char by char,98,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java, perform comparison within the blocks,60,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java, load up memory first,68,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java, perform local comparison,74,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java, perform comparison between the blocks,87,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java," we are on the last block, terminate",92,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java, load this block into memory,98,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java, between comparsion,104,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java, try load four cpu,129,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java, invoke and close everything,141,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java, outer loop is the database,164,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Compare.java, inner loop is the project,168,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/ConfigFile.java, process text similarity,61,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/ConfigFile.java, process other heuristics,91,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/ConfigFile.java, Make an  instance of the DocumentBuilderFactory,356,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/ConfigFile.java, use the factory to take an instance of the document builder,359,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/ConfigFile.java, parse using the builder to get the DOM mapping of the    ,361,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/ConfigFile.java, XML file,362,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/ConfigFile.java,"
+        Document dom;
+        Element e = null;
+
+        // instance of a DocumentBuilderFactory
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        try {
+            // use factory to get an instance of document builder
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            // create instance of DOM
+            dom = db.newDocument();
+
+            // create the root element
+            Element rootEle = dom.createElement(""configuration"");
+            // create data elements and place them under root
+            e = dom.createElement(""numLines"");
+            e.appendChild(dom.createTextNode(""3""));
+            rootEle.appendChild(e);
+
+            e = dom.createElement(""database"");
+            e.appendChild(dom.createTextNode(""path A""));
+            rootEle.appendChild(e);
+
+            e = dom.createElement(""project"");
+            e.appendChild(dom.createTextNode(""path B""));
+            rootEle.appendChild(e);
+
+            e = dom.createElement(""algorithm"");
+            e.appendChild(dom.createTextNode(""A""));
+            rootEle.appendChild(e);
+
+            e = dom.createElement(""debug"");
+            e.appendChild(dom.createTextNode(""A""));
+            rootEle.appendChild(e);
+
+            e = dom.createElement(""removeEmpty"");
+            e.appendChild(dom.createTextNode(""false""));
+            rootEle.appendChild(e);
+
+            e = dom.createElement(""buildDatabase"");
+            e.appendChild(dom.createTextNode(""false""));
+            rootEle.appendChild(e);
+
+            e = dom.createElement(""gapSize"");
+            e.appendChild(dom.createTextNode(""false""));
+            rootEle.appendChild(e);
+
+            e = dom.createElement(""resultPath"");
+            e.appendChild(dom.createTextNode(""path C""));
+            rootEle.appendChild(e);
+
+            e = dom.createElement(""loadResults"");
+            e.appendChild(dom.createTextNode(""false""));
+            rootEle.appendChild(e);
+
+            e = dom.createElement(""similarityRange"");
+            e.appendChild(dom.createTextNode(""extended""));
+            rootEle.appendChild(e);
+
+            dom.appendChild(rootEle);
+
+            try {
+                Transformer tr = TransformerFactory.newInstance().newTransformer();
+                tr.setOutputProperty(OutputKeys.INDENT, ""yes"");
+                tr.setOutputProperty(OutputKeys.METHOD, ""xml"");
+                tr.setOutputProperty(OutputKeys.ENCODING, ""UTF-8"");
+                tr.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, ""config.dtd"");
+                tr.setOutputProperty(""{http://xml.apache.org/xslt}indent-amount"", ""4"");
+                // send DOM to file
+                File file = new File(filePath);
+                if (file.exists()) {
+                    System.out.println(""File exists, please remove existing file first"");
+                    return;
+                }
+                FileOutputStream fos = new FileOutputStream(file);
+                DOMSource source = new DOMSource(dom);
+                StreamResult result = new StreamResult(fos);
+                tr.transform(source, result);
+
+            } catch (TransformerException te) {
+                System.out.println(""Transformer exception: "" + te.getMessage());
+            } catch (IOException ioe) {
+                System.out.println(""IOException: "" + ioe.getMessage());
+            }
+        } catch (ParserConfigurationException pce) {
+            System.out.println(""UsersXML: Error trying to instantiate DocumentBuilder "" + pce);
+        }
+        ",403,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, get all the files from a directory,42,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java,System.out.println(file);,46,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, Serialize file and write to file,64,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, Load serialized file,92,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java," directory, callback this function to do it recursively",120,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java,System.out.println(new_file_list);,122,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java," file, check for the extension",125,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, Load serialized file,145,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, Load serialized file,180,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, Load serialized file,218,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, Serialize file and write to file,229,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, tokenizes files,258,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, check if it exists,269,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, debug message,273,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, delete old file first if needed,284,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Database.java, Serialize file and write to file,290,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, obtain a list of strings       ,49,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, break down the strings by camel case,57,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, adds a match into the matchgroup,112,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, add to master,120,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, add to clone,123,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java," mode 0 - master, 1 - clone, 2 - both",133,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, check the master,161,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, check the clone,164,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, clone pruning on comments with invalid terms,180,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, analyze for invalid terms or too short,183,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, removal,190,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, discard the whole comment list if any is bad,198,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, by replacing the list with an empty one,199,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, only do stanford parser if it is from autocomment,207,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,"System.out.println(""ffff"");",213,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,System.out.println(commentSingle);,214,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,"System.out.println(""asdf"");",218,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,System.out.println(cMap.comment);,219,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, text similarity,229,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, mode is ascending vs desending,292,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, Sorting the list based on values,298,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, Maintaining insertion order with the help of LinkedList,312,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, obtain a list of all the possible code comments from each clone,323,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,"System.out.println(""yyyy"");",335,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,System.out.println(cMap.comment);,336,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,System.out.println(thisScore);,337,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, rank it based on the size,341,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,"HashMap<String, Integer> sortedString = sortByComparator(listComments, 1);",342,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,"writer.println(displayedNum + "". (size "" + pairs.getValue() + "")"");",360,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,"writerMaster.println(displayedNum + "". (size "" + pairs.getValue() + "")"");",363,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,it.remove();,366,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,displayedNum++;,367,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, do not group line comments because it is used to break,386,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, multiple sentences,387,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, try extend it,391,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, extend it,395,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, update,398,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, remove start of line spaces,406,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, remove leading opener,418,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, remove start of line annotations,422,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, remove start of line spaces,426,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, condence the spaces,430,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, get the list of comments associated,452,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,ArrayList<CommentMap> commentList = new ArrayList<CommentMap>();,454,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, source code format,457,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,"cParser.parseComment(filePath, startLine, endLine, 0, true);",458,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, remove in-line comments,463,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,"commentList = removeInline(commentList, filePath);",464,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, group the comments,466,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,commentList = groupNormalizeComment(commentList);,467,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,thisMatch.setComments(commentList);,469,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, get the list of comments associated,479,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,for (CommentMap c : commentList) {,482,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,    String v = c.comment;,483,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java,},484,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, remove in-line comments,485,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, source code format,487,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, get unique list of comments from master and clones,499,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, first print the master list,552,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, print header,561,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, print the comment ,569,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, Print the code segment,575,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, then print the clone list,593,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, print header,605,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, print text similarity terms,613,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, print the comment ,621,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, print the artifacts,623,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/MatchGroup.java, Print the code segment,629,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, obtain a list of childrens,22,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Recursively traverse the tree,38,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java," Replace ""."" with ""@@"" to avoid confusion on the sentence splitter",48,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, return string,63,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java," Replace ""."" with ""@""",66,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Process the line,69,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,"pipeline.prettyPrint(annotation, System.out);",72,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Obtain a list of sentences,74,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Process one sentence at a time,77,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, this is the parse tree of the current sentence,80,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,tree.pennPrint();,82,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, regex for matching,84,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, merge the found sub-trees that are matched by the regex,90,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Sentence does not satisfy the NP-VP patterns,110,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java," Breakdown ""CC"" clauses",114,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Obtain the sentence on the merged tree from the leaf nodes,123,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,mergeTree.pennPrint();,126,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,System.out.println(listOfLeaves);,127,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Discard sentence if it is too short,129,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,String sentenceString = sentence.toString();,134,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,System.out.println(sentenceString);,135,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,System.out.println(line);,136,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,System.out.println(listOfLeaves.get(i).label());,139,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,System.out.println(begin);,142,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,System.out.println(end);,143,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, First letter in a sentence should be on upper case,154,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,System.out.println(sentenceString);,156,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, First sentence doesn't need space appending,158,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Needs a space in front of sentence,160,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Check if there is an invalid ending character for this sentence and remove it,166,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Then append a fullstop.,167,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Check if there is a valid ending fullstop for this sentence,175,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,"System.out.println(""fff"");",197,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java,System.out.println(splitList.length);,198,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Append to processed string,217,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Convert encrypted characters back to original,222,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java," Replace ""@@"" with ""."" for end user presentation",229,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java, Create a StandfordCoreNLP object,249,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/NLP.java," props.put(""annotators"", ""tokenize, ssplit, pos, lemma, ner, parse, dcoref"");",251,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java,ArrayList<MatchGroup> matchGroupList = new ArrayList<MatchGroup>();,33,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java," file coverage, start-end line",63,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java," statement hash number, start-end",64,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java," method line coverage, start-end line",65,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, check for hashing error during the group hash process,73,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, only for non-gapped clones,74,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, check for repetitive statements,82,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, require at least one method call,89,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, check for valid scope,96,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java,"if (Analyze.hasValidScope(statementRaw1.subList(statementStart1, statementEnd1)) == false) {",97,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java,    return;,98,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java,},99,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, require at least one method call,101,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, ensure majority of the file is matched (only for SO snippets),126,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java,"System.out.println(percentage + ""%"");",144,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java,System.out.println(file1);,145,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java,System.out.println(file2);,146,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java,"System.out.println(lineEnd2 + "" ""  + lineStart2 + ""= "" + sizeMatched + "" X "" + size);",147,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, between comparison,162,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, add as a clone,168,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, add as a master,173,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, status 1 and 2 are false,181,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, full mesh,194,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, add as a clone,201,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, add as a clone,206,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, status 1 and 2 are false,214,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, Serialize file and write to file,231,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, Load serialized file,245,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, no comment and remove empty is true,313,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, simply export the ones without comment to a different filename,314,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, make sure similarity terms are already been gathered,338,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, only can rank comment if there is a comment,339,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, break down the terms by camel case,386,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Output.java, search for a clone that contains all the terms,394,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,for (TypeInfo map : mapList) {,40,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"    System.out.println(map.varName +  "" "" + map.varType);",41,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java, },42,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java, Convert a file into a String ,55,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,variableMap.remove(variableMap.get(i));,66,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java, Convert files that are in String format to AST ,72,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java, class,82,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java," new String[] {""UTF-8""}",125,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,parser.setBindingsRecovery(true);,130,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,System.out.println(absPath);,135,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java, do not attempt repair on complete java files,146,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java, Process the main body,154,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                    // JavaDoc comment that starts with ""/** for type declarations""
+                    public boolean	visit(AnnotationTypeDeclaration node) {
+
+                    int startLine = unit.getLineNumber(node.getStartPosition());
+                    return true;
+                    }
+
+                    // JavaDoc comment that starts with ""/** for type member declarations""
+                    public boolean	visit(AnnotationTypeMemberDeclaration node) {
+
+                    int startLine = unit.getLineNumber(node.getStartPosition());
+                    return true;
+                    }
+                    ",159,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,reminder,284,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(CompilationUnit node) {
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+                       return true;
+                       }
+                       ",318,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(EmptyStatement node) {
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+                       tk.statementStart(startLine);
+
+                       tk.addHash(78, startLine);
+                       tk.statementEnd(scopeLevel);
+
+                       return true;
+                       }",375,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(EnumConstantDeclaration node) {
+                       System.out.println(""EnumConstantDeclaration"");
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+                       System.out.println(""EnumConstantDeclaration at line ""+ Integer.toString(startLine));
+                       return true;
+                       }",396,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(EnumDeclaration node) {
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+                       return true;
+                       }
+                       ",405,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                     * always together with VariableDeclarationFragment
+                     ",436,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                                   if (!within_method.isEmpty()) {
+                                // In a method
+                                tk.statementStart(startLine);
+                                tk.addHash(85, binding.getName(), startLine);
+                                   }
+                                   ",455,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                                   if (!within_method.isEmpty()) {
+                                // In a method
+                                tk.addHash(85, varType, startLine);
+                                   }
+                                   ",469,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(Initializer node) {
+                       System.out.println(""Initializer"");
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+                       tk.addHash(28,startLine);
+
+                       return true;
+                       }",560,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java, Comments ,577,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,			public boolean	visit(Javadoc node) {,578,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,,579,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,				int startLine = unit.getLineNumber(node.getStartPosition());,580,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,,581,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"				System.out.println(""Javadoc at line ""+ Integer.toString(startLine));",582,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,,583,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,				return true;,584,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,			},585,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean visit(Annotation node) {
+
+                       System.out.println(""annotation node"");
+
+                       return true;
+
+                       }
+
+                       public boolean	visit(MarkerAnnotation node) {
+
+                       return false;
+                    //int startLine = unit.getLineNumber(node.getStartPosition());
+                    //tk.addHash(31, node.getTypeName().getFullyQualifiedName(),startLine);
+
+                    //return true;
+                       }
+                       ",598,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java, Get Line number,636,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,tk.statementStart(startLine);,653,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"tk.addHash(75, startLine);",654,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,tk.statementEnd(scopeLevel);,655,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,IMethodBinding methodBinding = node.resolveBinding();,657,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,System.out.println(node.getName().toString());,659,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(MethodRef node) {
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+
+                       System.out.println(""MethodRef at line ""+ Integer.toString(startLine));
+
+                       return true;
+                       }
+
+                       public boolean	visit(MethodRefParameter node) {
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+
+                       System.out.println(""MethodRefParameter at line ""+ Integer.toString(startLine));
+
+                       return true;
+                       }",671,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"	public, protected, private, static, abstract, final, native, synchronized, transient
+                     *  volatile, strictfp
+                     ",691,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(Modifier node) {
+                       System.out.println(""modifier node"");
+                       return true;
+                       }
+                       ",694,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(NormalAnnotation node) {
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+                       System.out.println(""Initializer at line ""+ Integer.toString(startLine));
+                       return true;
+                       }
+                       ",702,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"System.out.println(""NumberLiteral at line ""+ Integer.toString(startLine));",723,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,,734,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,				//int startLine = unit.getLineNumber(node.getStartPosition());,735,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,,736,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,//				SimpleName name = (SimpleName) node.getName();,737,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"//				System.out.println(""PackageDeclaration with name of ""+name+"" at line ""+ unit.getLineNumber(name.getStartPosition()));",738,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"				System.out.println(""PackageDeclaration with name of "");",739,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,,740,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,				return true;,741,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(ParameterizedType node) {
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+                       tk.addHash(43, startLine);
+
+                       return true;
+                       }",744,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean visit(Name node) {
+
+                       System.out.println(""ddd"");
+                       return true;
+                       }",787,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                     * always together with VariableDeclarationFragment
+                     ",794,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,			public boolean	visit(PrimitiveType node) {,797,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,,798,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,				int startLine = unit.getLineNumber(node.getStartPosition());,799,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"				tk.addHash(47, node.toString(), startLine);",800,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,				return true;,801,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,			},802,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean visit(AbstractTypeDeclaration node) {
+                       System.out.println(""AbstractTypeDeclaration"");
+                       return true;
+                       }
+
+                       public boolean visit(BodyDeclaration node) {
+                       System.out.println(""BodyDeclaration node"");
+                       return true;
+                       }
+
+                       public boolean	visit(QualifiedType node) {
+                       System.out.println(""QualifiedType"");
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+
+                       System.out.println(""QualifiedType at line ""+ Integer.toString(startLine));
+
+                       return true;
+                       }
+                       ",811,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                           int startLine = unit.getLineNumber(node.getStartPosition());
+                           tk.statementStart(startLine);
+
+                           Expression exp = node.getExpression();
+                           if (exp == null) {
+                           tk.addHash(48, startLine);
+                           return true;
+                           }
+                           ITypeBinding bind = exp.resolveTypeBinding();
+                           if (bind != null) {
+                           String s = bind.getQualifiedName();
+                           tk.addHash(48,s,startLine);
+                           }
+                           else {
+                           tk.addHash(48, startLine);
+                           }
+                           ",833,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public void endVisit(ReturnStatement node) {
+                       tk.statementEnd(scopeLevel);
+                       }
+                       ",854,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(SimpleType node) {
+                       System.out.println(""ddd  "" + node.toString());
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+                       ITypeBinding typeBinding = node.resolveBinding();
+
+                       if (typeBinding != null) {
+                       tk.addHash(49, typeBinding.getQualifiedName(), startLine);
+                       }
+                       else {
+                       tk.addHash(49, node.getName().getFullyQualifiedName(), startLine);
+                       }
+
+                       return true;
+                       }",877,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                           if (node.getExpression() != null) {
+                           tk.addHash(86, node.getExpression().toString(), startLine);
+                           }",963,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(SwitchCase node) {
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+                       tk.addHash(54, startLine);
+                       return true;
+                       }",971,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+
+                           int startLine = unit.getLineNumber(node.getStartPosition());
+                           tk.statementStart(startLine);
+
+                           tk.addHash(55, startLine);
+
+                           tk.statementEnd(scopeLevel);
+                           ",980,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,int startLine = unit.getLineNumber(node.getStartPosition());,1051,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,tk.statementStart(startLine);,1052,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"tk.addHash(62, startLine);",1053,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(TypeDeclarationStatement node) {
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+                       tk.statementStart(startLine);
+                       tk.statementEnd(scopeLevel);
+
+                       System.out.println(""TypeDeclarationStatement at line ""+ Integer.toString(startLine));
+
+                       return true;
+                       }",1065,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public boolean	visit(TypeLiteral node) {
+
+                       return true;
+                       }
+
+                       public boolean	visit(TypeParameter node) {
+
+                       int startLine = unit.getLineNumber(node.getStartPosition());
+
+                    //System.out.println(""TypeParameter at line ""+ Integer.toString(startLine));
+
+                    return true;
+                       }
+
+                       public boolean	visit(UnionType node) {
+                       System.out.println(""uniontype"");
+                       return true;
+                       }
+                       ",1077,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"System.out.println(""VariableDeclarationExpression"");",1099,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"System.out.println(""VariableDeclarationExpression at line ""+ Integer.toString(startLine));",1112,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"System.out.println(""VariableDeclarationFragment"");",1117,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,System.out.println(node);,1121,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Parser.java,"
+                       public void endVisit(WhileStatement node) {
+                       int startLine = unit.getLineNumber(node.getStartPosition()+node.getLength());
+                    //tk.statementStart(startLine);
+                    //tk.addHash(76, startLine);
+                    //tk.statementEnd(scopeLevel);
+                    }",1159,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Query.java, first line is the labels,18,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Query.java, find out what index are we dealing with,50,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Query.java, get its index,53,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Query.java,System.out.println(index);,58,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Query.java,"       new FileReader(""table.txt""));",69,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/RunnableDemo.java,"System.out.println(""Running "" +  threadName );",36,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/RunnableDemo.java, inner loop is the project,38,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/RunnableDemo.java,"System.out.println(""Thread "" +  threadName + "" exiting."");",43,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/RunnableDemo.java,"System.out.println(""Creating "" +  threadName );",49,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/RunnableDemo.java,"System.out.println(""Starting "" +  threadName );",59,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/RunnableDemo.java,if (t == null) {,60,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/RunnableDemo.java,"    t = new Thread (this, threadName);",61,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/RunnableDemo.java,    t.start ();,62,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/RunnableDemo.java,},63,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/StanfordLemmatizer.java," Create StanfordCoreNLP object properties, with POS tagging",21,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/StanfordLemmatizer.java," (required for lemmatization), and lemmatization",22,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/StanfordLemmatizer.java,"props.put(""annotators"", ""tokenize, ssplit, pos, lemma"");",25,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/StanfordLemmatizer.java," StanfordCoreNLP loads a lot of models, so you probably",28,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/StanfordLemmatizer.java, only want to do this once per execution,29,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/StanfordLemmatizer.java, necessary for the LemmaAnnotation to be set.,36,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java,"
+
+   Porter stemmer in Java. The original paper is in
+
+   Porter, 1980, An algorithm for suffix stripping, Program, Vol. 14,
+   no. 3, pp 130-137,
+
+   See also http://www.tartarus.org/~martin/PorterStemmer
+
+History:
+
+Release 1
+
+Bug 1 (reported by Gonzalo Parra 16/10/99) fixed as marked below.
+The words 'aed', 'eed', 'oed' leave k at 'a' for step 3, and b[k-1]
+is then out outside the bounds of b.
+
+Release 2
+
+Similarly,
+
+Bug 2 (reported by Steve Dyrdahl 22/2/00) fixed as marked below.
+'ion' by itself leaves j = -1 in the test for 'ion' in step 5, and
+b[j] is then outside the bounds of b.
+
+Release 3
+
+Considerably revised 4/9/00 in the light of many helpful suggestions
+from Brian Goetz of Quiotix Corporation (brian@quiotix.com).
+
+Release 4
+
+",2,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java,"*
+ * Stemmer, implementing the Porter Stemming Algorithm
+ *
+ * The Stemmer class transforms a word into its root form.  The input
+ * word can be provided a character at time (by calling add()), or at once
+ * by calling one of the various stem(something) methods.
+ ",38,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, offset into b ,48,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, offset to end of stemmed word ,49,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, unit of size whereby b is increased ,52,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java,"*
+	 * Add a character to the word being stemmed.  When you are finished
+	 * adding characters, you can call stem(void) to stem the word.
+	 ",59,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java,"* Adds wLen characters to the word being stemmed contained in a portion
+	 * of a char[] array. This is like repeated calls of add(char ch), but
+	 * faster.
+	 ",74,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java,"*
+	 * After a word has been stemmed, it can be retrieved by toString(),
+	 * or a reference to the internal buffer can be retrieved by getResultBuffer
+	 * and getResultLength (which is generally more efficient.)
+	 ",88,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java,"*
+	 * Returns the length of the word resulting from the stemming process.
+	 ",95,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java,"*
+	 * Returns a reference to a character buffer containing the results of
+	 * the stemming process.  You also need to consult getResultLength()
+	 * to determine the length of the result.
+	 ",100,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, cons(i) is true <=> b[i] is a consonant. ,107,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," m() measures the number of consonant sequences between 0 and j. if c is
+	   a consonant sequence and v a vowel sequence, and <..> indicates arbitrary
+	   presence,
+
+	   <c><v>       gives 0
+	   <c>vc<v>     gives 1
+	   <c>vcvc<v>   gives 2
+	   <c>vcvcvc<v> gives 3
+	   ....
+	   ",117,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," vowelinstem() is true <=> 0,...j contains a vowel ",153,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," doublec(j) is true <=> j,(j-1) contain a double consonant. ",160,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," cvc(i) is true <=> i-2,i-1,i has the form consonant - vowel - consonant
+	   and also if the second c is not w,x or y. this is used when trying to
+	   restore an e at the end of a short word. e.g.
+
+	   cav(e), lov(e), hop(e), crim(e), but
+	   snow, box, tray.
+
+",168,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," setto(s) sets (j+1),...k to the characters in the string s, readjusting
+	   k. ",194,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, r(s) is used further down. ,204,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," step1() gets rid of plurals and -ed or -ing. e.g.
+
+	   caresses  ->  caress
+	   ponies    ->  poni
+	   ties      ->  ti
+	   caress    ->  caress
+	   cats      ->  cat
+
+	   feed      ->  feed
+	   agreed    ->  agree
+	   disabled  ->  disable
+
+	   matting   ->  mat
+	   mating    ->  mate
+	   meeting   ->  meet
+	   milling   ->  mill
+	   messing   ->  mess
+
+	   meetings  ->  meet
+
+",208,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, step2() turns terminal y to i when there is another vowel in the stem. ,252,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," step3() maps double suffices to single ones. so -ization ( = -ize plus
+	   -ation) maps to -ize etc. note that the string before the suffix must give
+	   m() > 0. ",256,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, For Bug 1 ,260,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," step4() deals with -ic-, -full, -ness etc. similar strategy to step3. ",292,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," step5() takes off -ant, -ence etc., in context <c>vcvc<v>. ",309,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, for Bug 1 ,312,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, element etc. not stripped before the m ,323,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, j >= 0 fixes Bug 2 ,326,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, takes care of -ous ,328,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, step6() removes a final -e if m() > 1. ,340,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java,"* Stem the word placed into the Stemmer buffer through calls to add().
+	 * Returns true if the stemming process resulted in a word different
+	 * from the input.  You can retrieve the result with
+	 * getResultLength()/getResultBuffer() or toString().
+	 ",351,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java,"* Test program for demonstrating the Stemmer.  It reads text from a
+	 * a list of files, stems each word, and writes the result to standard
+	 * output. Note that the word stemmed is expected to be in lower case:
+	 * forcing lower case must be done outside the Stemmer class.
+	 * Usage: Stemmer file-name file-name ...
+	 ",362,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java, to test add(char ch) ,391,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," or, to test add(char[] w, int j) ",394,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," s.add(w, j); ",395,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," and now, to test toString() : ",400,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," to test getResultBuffer(), getResultLength() : ",403,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Stemmer.java," u = new String(s.getResultBuffer(), 0, s.getResultLength()); ",404,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Text.java, freecol/xx/xx/xx,12,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Text.java, A collection of Methods ,14,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Text.java, Constructor ,27,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Text.java," error at parsing the token list, abort",66,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Text.java, check and see if there is a comment in each method,74,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Text.java,"System.out.println(startLine + "" "" + endLine + "" "" + absolutePath);",79,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Text.java, TODO: fix this optimization later,83,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Text.java,if (cMapList.size() == 0) {,84,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Text.java,} else {,85,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Text.java,},87,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, exact matching,13,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, x - statement1,19,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, y - statement2,20,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, Build matrix,21,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,matrix = new boolean[sizeX][sizeY];,24,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, find the NG-clone,35,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,remove from arrayList,46,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, gapped matching,72,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, populate the scatter plot,78,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, used to store the NG-clones,91,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, Detect NG-clones,94,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, see how far we can go,100,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, try extend the chain,105,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, remove this since it is ,109,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, part of a NG-chain,110,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, can extend chain,113,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, there is a gap,119,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, add to chain list,124,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,"System.out.println(thisCoor.x + ""!"" + thisCoor.y);",127,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,"System.out.println(currentX + ""!"" + currentY);",128,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,System.out.println(longestLength);,129,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, remove this point,131,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, now have a list of NG chains,135,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, create a hashmap of gaps,136,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, search for connections,141,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, check if the two are near,145,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, satistified gap requirement,150,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, optimization,160,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, now have a list of gaps,168,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, construct the longest chain,169,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,ArrayList<ArrayList<Chain>> filteredList = new ArrayList<ArrayLIst<Chain>>();,171,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, check the length,173,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, calculate the total length of the match excluding the gaps,175,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, and prune out repetitive matches,176,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, assume there is at least one line and one chain,180,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, sum up the length,183,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, check on the master side,186,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, check repetitiveness,188,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, sum up the value,195,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, get first element for the starting point,202,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java, get last element for the ending point,206,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,"System.out.println(""ffff"");",209,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,System.out.println(projectDir);,210,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,System.out.println(databaseDir);,211,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,System.out.println(text1.getDatabasePath());,212,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/TextCompare.java,System.out.println(text2.getDatabasePath());,213,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Tokenizer.java, prevent methods within a method,55,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Tokenizer.java,currentMethodObj.buildHash(minNumLines);,61,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Tokenizer.java, clear the statments,65,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Tokenizer.java, debug,89,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Tokenizer.java, Add node name,136,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Tokenizer.java, Add code element,144,True
+https://raw.githubusercontent.com/e32wong/CloCom/master/Tokenizer.java," Add variable element that contains ast type, type and name",152,True
